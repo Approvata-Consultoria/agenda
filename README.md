@@ -1,2 +1,2 @@
-# agenda-aprovata
-Agendas Positivas mensais interativas da Aprovata.
+# agenda-approvata
+Agendas Positivas mensais interativas da Approvata.
