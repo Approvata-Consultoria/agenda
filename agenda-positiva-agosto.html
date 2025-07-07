@@ -6,6 +6,48 @@
     <title>Agenda Positiva - Aprovata (Agosto)</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        /* Estilos para a seção com imagem à esquerda e texto centralizado */
+        .content-com-imagem-esquerda {
+            display: flex; /* Habilita o Flexbox */
+            flex-direction: column; /* Por padrão, empilha em telas pequenas */
+            align-items: center; /* Centraliza verticalmente e horizontalmente ao empilhar */
+            gap: 20px; /* Espaçamento entre os itens (imagem e texto) */
+            text-align: center; /* Centraliza o texto quando a imagem está acima/abaixo */
+        }
+
+        .imagem-esquerda {
+            max-width: 100%; /* Garante que a imagem não saia do container */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            /* Tamanho fixo para a imagem quando estiver à esquerda */
+            width: 250px; /* Largura da imagem, ajuste conforme preferir */
+            min-width: 200px; /* Garante que a imagem não fique pequena demais */
+            flex-shrink: 0; /* Impede que a imagem encolha se houver pouco espaço */
+        }
+
+        .texto-centralizado {
+            flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        /* Ajustes Responsivos: Para telas maiores, a imagem vai para a esquerda */
+        @media (min-width: 650px) { /* A partir de 650px de largura, aplica este layout */
+            .content-com-imagem-esquerda {
+                flex-direction: row; /* Coloca a imagem e o texto lado a lado */
+                align-items: flex-start; /* Alinha os itens ao topo */
+                text-align: left; /* O texto volta a ser alinhado à esquerda dentro do seu próprio bloco */
+            }
+
+            .imagem-esquerda {
+                margin-right: 20px; /* Espaço entre a imagem e o texto */
+                margin-left: 0; /* Remove a margem automática de centralização */
+            }
+
+            .texto-centralizado {
+                text-align: left; /* Garante que o texto fique alinhado à esquerda no layout de lado a lado */
+            }
+        }
 
         :root {
             /* Cores base da Aprovata - AJUSTE ESTAS CORES PARA A PALETA EXATA DA SUA MARCA */
