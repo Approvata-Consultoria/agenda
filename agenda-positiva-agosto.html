@@ -1,267 +1,400 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda Positiva - Aprovata (Agosto)</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        /* Estilos para a seção com imagem à esquerda e texto centralizado */
-        .content-com-imagem-esquerda {
-            display: flex; /* Habilita o Flexbox */
-            flex-direction: column; /* Por padrão, empilha em telas pequenas */
-            align-items: center; /* Centraliza verticalmente e horizontalmente ao empilhar */
-            gap: 20px; /* Espaçamento entre os itens (imagem e texto) */
-            text-align: center; /* Centraliza o texto quando a imagem está acima/abaixo */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Positiva - Aprovata (Agosto)</title>
+    <meta property="og:title" content="Agenda Positiva Aprovata - Agosto: Cultivando Talentos!">
+    <meta property="og:description" content="Fique por dentro das novidades, dicas de IA, vagas abertas e a cultura da Aprovata.">
+    <meta property="og:image" content="https://approvata-consultoria.github.io/agenda/images/preview-agenda-agosto.jpg">
+    <meta property="og:url" content="https://approvata-consultoria.github.io/agenda/agenda-positiva-agosto.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Aprovata Consultoria">
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        /* Estilos para a seção com imagem à esquerda e texto centralizado */
+        .content-com-imagem-esquerda {
+            display: flex; /* Habilita o Flexbox */
+            flex-direction: column; /* Por padrão, empilha em telas pequenas */
+            align-items: center; /* Centraliza verticalmente e horizontalmente ao empilhar */
+            gap: 20px; /* Espaçamento entre os itens (imagem e texto) */
+            text-align: center; /* Centraliza o texto quando a imagem está acima/abaixo */
+        }
+
+        .imagem-esquerda {
+            max-width: 100%; /* Garante que a imagem não saia do container */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            /* Tamanho fixo para a imagem quando estiver à esquerda */
+            width: 250px; /* Largura da imagem, ajuste conforme preferir */
+            min-width: 200px; /* Garante que a imagem não fique pequena demais */
+            flex-shrink: 0; /* Impede que a imagem encolha se houver pouco espaço */
+        }
+
+        .texto-centralizado {
+            flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        /* Ajustes Responsivos: Para telas maiores, a imagem vai para a esquerda */
+        @media (min-width: 650px) { /* A partir de 650px de largura, aplica este layout */
+            .content-com-imagem-esquerda {
+                flex-direction: row; /* Coloca a imagem e o texto lado a lado */
+                align-items: flex-start; /* Alinha os itens ao topo */
+                text-align: left; /* O texto volta a ser alinhado à esquerda dentro do seu próprio bloco */
+            }
+
+            .imagem-esquerda {
+                margin-right: 20px; /* Espaço entre a imagem e o texto */
+                margin-left: 0; /* Remove a margem automática de centralização */
+            }
+
+            .texto-centralizado {
+                text-align: left; /* Garante que o texto fique alinhado à esquerda no layout de lado a lado */
+            }
+        }
+
+        /* Estilos para a seção Aprovata Contrata (Imagem Interativa) */
+        .contrata-flex-container {
+            display: flex; /* Habilita o Flexbox para alinhar itens lado a lado */
+            flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo em telas menores */
+            justify-content: space-between; /* Distribui o espaço entre a lista e a imagem */
+            align-items: flex-start; /* Alinha os itens ao topo */
+            gap: 20px; /* Espaço entre a lista e a imagem */
+            margin-top: 20px; /* Espaço acima deste bloco */
         }
 
-        .imagem-esquerda {
-            max-width: 100%; /* Garante que a imagem não saia do container */
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            /* Tamanho fixo para a imagem quando estiver à esquerda */
-            width: 250px; /* Largura da imagem, ajuste conforme preferir */
-            min-width: 200px; /* Garante que a imagem não fique pequena demais */
-            flex-shrink: 0; /* Impede que a imagem encolha se houver pouco espaço */
+        .vagas-lista {
+            flex: 2; /* Ocupa 2/3 do espaço disponível (mais espaço para a lista de vagas) */
+            min-width: 280px; /* Garante que a lista não fique muito estreita em telas pequenas */
         }
 
-        .texto-centralizado {
-            flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
-            text-align: center; /* Centraliza o texto */
-        }
-
-        /* Ajustes Responsivos: Para telas maiores, a imagem vai para a esquerda */
-        @media (min-width: 650px) { /* A partir de 650px de largura, aplica este layout */
-            .content-com-imagem-esquerda {
-                flex-direction: row; /* Coloca a imagem e o texto lado a lado */
-                align-items: flex-start; /* Alinha os itens ao topo */
-                text-align: left; /* O texto volta a ser alinhado à esquerda dentro do seu próprio bloco */
-            }
-
-            .imagem-esquerda {
-                margin-right: 20px; /* Espaço entre a imagem e o texto */
-                margin-left: 0; /* Remove a margem automática de centralização */
-            }
-
-            .texto-centralizado {
-                text-align: left; /* Garante que o texto fique alinhado à esquerda no layout de lado a lado */
-            }
-        }
-
-        :root {
-            /* Cores base da Aprovata - AJUSTE ESTAS CORES PARA A PALETA EXATA DA SUA MARCA */
-            --aprovata-primary-blue: #007bff; /* Azul principal */
-            --aprovata-secondary-gray: #6c757d; /* Cinza para textos secundários */
-            --aprovata-light-bg: #f8f9fa; /* Fundo claro das seções */
-            --aprovata-white: #ffffff; /* Fundo principal */
-            --aprovata-border-light: #e0e0e0; /* Borda suave */
-            --aprovata-text-dark: #343a40; /* Cor padrão do texto */
-
-            /* Fontes */
-            --header-font: 'Poppins', sans-serif;
-            --body-font: 'Poppins', sans-serif;
-        }
-
-        body {
-            font-family: var(--body-font);
-            line-height: 1.6;
-            color: var(--aprovata-text-dark);
-            background-color: var(--aprovata-light-bg);
-            margin: 0;
-            padding: 20px;
-            display: flex;
+        .aprovados-imagem-container {
+            flex: 1; /* Ocupa 1/3 do espaço disponível (menos espaço para a imagem) */
+            min-width: 200px; /* Garante um tamanho mínimo para a imagem em telas médias */
+            text-align: center; /* Centraliza a imagem e a legenda dentro do seu container */
+            display: flex; /* Usa flexbox para centralizar verticalmente a imagem */
+            flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-        }
-
-        .container {
-            background-color: var(--aprovata-white);
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            max-width: 800px; /* Largura similar a um design de Canva */
-            width: 100%;
-            padding: 30px;
-            overflow: hidden;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--aprovata-primary-blue); /* Linha de separação */
-        }
-
-        .logo-container {
-            margin-bottom: 15px; /* Espaço abaixo do logo */
-        }
-
-        .logo-container img {
-            max-width: 180px; /* Tamanho do logo */
-            height: auto;
-            display: block; /* Para centralizar */
-            margin: 0 auto; /* Centraliza o logo */
-        }
-
-        header h1 {
-            color: var(--aprovata-primary-blue);
-            font-family: var(--header-font);
-            font-size: 2.8em; /* Tamanho maior para o título principal */
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        header p {
-            color: var(--aprovata-secondary-gray);
-            font-size: 1.2em; /* Texto secundário um pouco maior */
-            font-weight: 300;
-        }
-
-        /* Estilo das seções individuais (Acordeão) */
-        .section-item {
-            margin-bottom: 20px; /* Mais espaço entre as seções */
-            border: 1px solid var(--aprovata-border-light);
-            border-radius: 10px; /* Cantos levemente mais arredondados */
-            overflow: hidden;
-            background-color: var(--aprovata-white);
-            transition: all 0.3s ease-in-out;
-        }
-
-        .section-item.active {
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada ao abrir */
-        }
-
-        .section-header {
-            background-color: var(--aprovata-primary-blue); /* Cabeçalho da seção com a cor primária */
-            color: white;
-            padding: 18px 25px; /* Mais padding para maior área clicável */
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            font-weight: 600;
-            font-size: 1.25em; /* Título da seção maior */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            transition: background-color 0.3s ease;
         }
 
-        .section-header:hover {
-            background-color: #0056b3; /* Um tom mais escuro do azul ao passar o mouse */
+        .aprovados-imagem-container a {
+            display: block; /* Para que o link ocupe todo o espaço da imagem e a sombra funcione */
+            text-decoration: none; /* Remove sublinhado do link na imagem */
+            color: inherit; /* Mantém a cor do texto padrão */
         }
 
-        .section-header .icon {
-            font-size: 1.8em; /* Ícone da seta maior */
-            transition: transform 0.3s ease;
-        }
-
-        .section-content {
-            padding: 25px; /* Mais padding para o conteúdo */
-            display: none;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-            max-height: 0;
-        }
-
-        .section-item.active .section-content {
-            display: block;
-            max-height: 1000px; /* Valor grande o suficiente para o conteúdo + imagem */
-        }
-
-        .section-item.active .section-header .icon {
-            transform: rotate(180deg);
-        }
-
-        .section-content h3 {
-            color: var(--aprovata-primary-blue);
-            margin-top: 0;
-            margin-bottom: 15px; /* Mais espaço abaixo do subtítulo */
-            font-size: 1.6em; /* Subtítulo dentro da seção */
-            font-weight: 700;
-        }
-
-        .section-content p {
-            margin-bottom: 15px;
-        }
-
-        .section-content ul {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0; /* Mais espaço para listas */
-        }
-
-        .section-content ul li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 28px; /* Mais espaço para o bullet */
-        }
-
-        .section-content ul li::before {
-            content: '•';
-            color: var(--aprovata-primary-blue);
-            font-weight: bold;
-            font-size: 1.2em; /* Bullet maior */
-            display: inline-block;
-            width: 1em;
-            margin-left: -1.2em;
-            position: absolute;
-            left: 0;
-        }
-
-        .section-content strong {
-            color: var(--aprovata-primary-blue);
-        }
-
-        .section-image {
-            max-width: 100%;
+        .interactive-aprovados-image {
+            max-width: 100%; /* Garante que a imagem não saia das bordas do seu container */
             height: auto;
-            border-radius: 10px; /* Cantos arredondados para imagens */
-            margin: 20px auto; /* Mais espaço acima e abaixo, e centralizado */
-            display: block;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Sombra sutil na imagem */
+            border-radius: 15px; /* Cantos mais arredondados para um visual moderno */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição suave para o efeito de hover */
+            display: block; /* Essencial para centralizar a imagem e remover espaços indesejados */
+            margin: 0 auto 10px auto; /* Centraliza a imagem e adiciona espaço abaixo dela */
+            cursor: pointer; /* Indica que é clicável */
         }
 
-        .footer {
-            text-align: center;
-            margin-top: 40px; /* Mais espaço no rodapé */
-            padding-top: 25px;
-            border-top: 1px dashed var(--aprovata-border-light);
+        .interactive-aprovados-image:hover {
+            transform: scale(1.05); /* Aumenta ligeiramente a imagem no hover */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+        }
+
+        .image-caption {
+            font-size: 0.95em; /* Tamanho da fonte para a legenda */
             color: var(--aprovata-secondary-gray);
-            font-size: 1em;
+            margin-top: 0; /* Ajusta espaçamento */
+            font-weight: 500;
         }
 
-        .footer a {
-            color: var(--aprovata-primary-blue);
-            text-decoration: none;
-            font-weight: 600;
-        }
 
-        .footer a:hover {
-            text-decoration: underline;
-        }
+        :root {
+            /* Cores base da Aprovata - AJUSTE ESTAS CORES PARA A PALETA EXATA DA SUA MARCA */
+            --aprovata-primary-blue: #007bff; /* Azul principal */
+            --aprovata-secondary-gray: #6c757d; /* Cinza para textos secundários */
+            --aprovata-light-bg: #f8f9fa; /* Fundo claro das seções */
+            --aprovata-white: #ffffff; /* Fundo principal */
+            --aprovata-border-light: #e0e0e0; /* Borda suave */
+            --aprovata-text-dark: #343a40; /* Cor padrão do texto */
 
-        /* Cores variadas para os cabeçalhos das seções, como no Canva (opcional) */
-        /* Remova ou ajuste para usar apenas a primary-blue se preferir mais uniformidade */
-        .section-item:nth-child(1) .section-header { background-color: #1a73e8; } /* Azul escuro */
-        .section-item:nth-child(2) .section-header { background-color: #34a853; } /* Verde vibrante */
-        .section-item:nth-child(3) .section-header { background-color: #fbbc05; } /* Amarelo ouro */
-        .section-item:nth-child(4) .section-header { background-color: #ea4335; } /* Vermelho alaranjado */
-        .section-item:nth-child(5) .section-header { background-color: #4285f4; } /* Outro tom de azul */
+            /* Fontes */
+            --header-font: 'Poppins', sans-serif;
+            --body-font: 'Poppins', sans-serif;
+        }
 
-    </style>
+        body {
+            font-family: var(--body-font);
+            line-height: 1.6;
+            color: var(--aprovata-text-dark);
+            background-color: var(--aprovata-light-bg);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: var(--aprovata-white);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px; /* Largura similar a um design de Canva */
+            width: 100%;
+            padding: 30px;
+            overflow: hidden;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--aprovata-primary-blue); /* Linha de separação */
+        }
+
+        .logo-container {
+            margin-bottom: 15px; /* Espaço abaixo do logo */
+        }
+
+        .logo-container img {
+            max-width: 180px; /* Tamanho do logo */
+            height: auto;
+            display: block; /* Para centralizar */
+            margin: 0 auto; /* Centraliza o logo */
+        }
+
+        header h1 {
+            color: var(--aprovata-primary-blue);
+            font-family: var(--header-font);
+            font-size: 2.8em; /* Tamanho maior para o título principal */
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        header p {
+            color: var(--aprovata-secondary-gray);
+            font-size: 1.2em; /* Texto secundário um pouco maior */
+            font-weight: 300;
+        }
+
+        /* Estilo das seções individuais (Acordeão) */
+        .section-item {
+            margin-bottom: 20px; /* Mais espaço entre as seções */
+            border: 1px solid var(--aprovata-border-light);
+            border-radius: 10px; /* Cantos levemente mais arredondados */
+            overflow: hidden;
+            background-color: var(--aprovata-white);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .section-item.active {
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada ao abrir */
+        }
+
+        .section-header {
+            background-color: var(--aprovata-primary-blue); /* Cabeçalho da seção com a cor primária */
+            color: white;
+            padding: 18px 25px; /* Mais padding para maior área clicável */
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.25em; /* Título da seção maior */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .section-header:hover {
+            background-color: #0056b3; /* Um tom mais escuro do azul ao passar o mouse */
+        }
+
+        .section-header .icon {
+            font-size: 1.8em; /* Ícone da seta maior */
+            transition: transform 0.3s ease;
+        }
+
+        .section-content {
+            padding: 25px; /* Mais padding para o conteúdo */
+            display: none;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            max-height: 0;
+        }
+
+        .section-item.active .section-content {
+            display: block;
+            max-height: 1000px; /* Valor grande o suficiente para o conteúdo + imagem */
+        }
+
+        .section-item.active .section-header .icon {
+            transform: rotate(180deg);
+        }
+
+        .section-content h3 {
+            color: var(--aprovata-primary-blue);
+            margin-top: 0;
+            margin-bottom: 15px; /* Mais espaço abaixo do subtítulo */
+            font-size: 1.6em; /* Subtítulo dentro da seção */
+            font-weight: 700;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .section-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0; /* Mais espaço para listas */
+        }
+
+        .section-content ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 28px; /* Mais espaço para o bullet */
+        }
+
+        .section-content ul li::before {
+            content: '•';
+            color: var(--aprovata-primary-blue);
+            font-weight: bold;
+            font-size: 1.2em; /* Bullet maior */
+            display: inline-block;
+            width: 1em;
+            margin-left: -1.2em;
+            position: absolute;
+            left: 0;
+        }
+
+        .section-content strong {
+            color: var(--aprovata-primary-blue);
+        }
+
+        .section-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* Cantos arredondados para imagens */
+            margin: 20px auto; /* Mais espaço acima e abaixo, e centralizado */
+            display: block;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Sombra sutil na imagem */
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px; /* Mais espaço no rodapé */
+            padding-top: 25px;
+            border-top: 1px dashed var(--aprovata-border-light);
+            color: var(--aprovata-secondary-gray);
+            font-size: 1em;
+        }
+
+        .footer a {
+            color: var(--aprovata-primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Cores variadas para os cabeçalhos das seções, como no Canva (opcional) */
+        /* Remova ou ajuste para usar apenas a primary-blue se preferir mais uniformidade */
+        .section-item:nth-child(1) .section-header { background-color: #1a73e8; } /* Azul escuro */
+        .section-item:nth-child(2) .section-header { background-color: #34a853; } /* Verde vibrante */
+        .section-item:nth-child(3) .section-header { background-color: #fbbc05; } /* Amarelo ouro */
+        .section-item:nth-child(4) .section-header { background-color: #ea4335; } /* Vermelho alaranjado */
+        .section-item:nth-child(5) .section-header { background-color: #4285f4; } /* Outro tom de azul */
+
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo-container">
-                <img src="imagens/logo-approvata.png" alt="Logo Aprovata" class="section-images"" alt="Logo Aprovata">
-            </div>
-            <h1>Agenda Positiva</h1>
-            <p>Agosto: Cultivando Talentos, Colhendo Resultados</p>
-        </header>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="images/logo-approvata.png" alt="Logo Aprovata">             </div>
+            <h1>Agenda Positiva</h1>
+            <p>Agosto: Cultivando Talentos, Colhendo Resultados</p>
+        </header>
 
-        <div class="main-content">
-div class="section-header">
+        <div class="main-content">
+            <div class="section-item">
+                <div class="section-header">
+                    <span>1. Boas-Vindas de Agosto!</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="section-content">
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965da0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxwZW9wbGUlMjB3b3JraW5nJTIwdG9nZXRoZXJ8ZW58MHx8fHwxNzA2MjUyMjMyfDA&ixlib=rb-4.0.3&q=800" alt="Equipe Aprovata trabalhando em conjunto" class="section-image">
+                    <p>Olá, time Aprovata!</p>
+                    <p>Bem-vindos a mais uma edição da nossa Agenda Positiva. Este mês de agosto está recheado de novidades, oportunidades de crescimento e celebrações que reforçam a nossa cultura e o compromisso com o seu desenvolvimento. Prepare-se para se inspirar e ficar por dentro de tudo!</p>
+                    <p>Que seja um mês de muita produtividade, aprendizado e conquistas para todos nós!</p>
+                </div>
+            </div>
+
+                        <div class="section-item">
+                <div class="section-header">
+                    <span>2. Homenagem Especial: Feliz Dia dos Pais!</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="content-com-imagem-esquerda">
+                        <img src="images/pai-e-filho.jpg" alt="Pai e filho brincando" class="imagem-esquerda">                         <div class="texto-centralizado">
+                            <p>Agosto é um mês especial, e dedicamos um carinho enorme a todos os pais da nossa equipe. No Dia dos Pais, celebramos não apenas a figura paterna, mas também o legado de carinho, dedicação e sabedoria que tantos deixam em nossas vidas.</p>
+                            <p>Ser pai é uma jornada de aprendizado contínuo, de guiar, inspirar e construir um futuro. É uma força que impulsiona e molda, e vemos essa mesma dedicação em cada um de vocês que, seja pai biológico, de coração, ou figura paterna, contribui para o crescimento de seus filhos e da nossa comunidade. Que este dia seja repleto de amor e reconhecimento!</p>
+                            <p>Nossa gratidão e um forte abraço a todos os pais da Aprovata!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                        <div class="section-item">
+                <div class="section-header">
+                    <span>3. Dica de IA na Prática: Desvendando Dados com Inteligência!</span>
+                    <span class="icon">▼</span>                 </div>
+                <div class="section-content">
+                    <p>Continuando nossa exploração da IA, este mês focamos em como ela pode transformar sua análise de dados. Chega de passar horas em planilhas! A IA pode ser sua ferramenta para extrair insights valiosos rapidamente.</p>
+                    <ul>
+                        <li><strong>Sumarização Inteligente:</strong> Cole um relatório extenso ou dados de pesquisa e peça para a IA identificar os pontos-chave e as principais tendências.</li>
+                        <li><strong>Identificação de Padrões:</strong> Use a IA para analisar grandes conjuntos de dados e encontrar padrões que seriam difíceis de perceber manualmente (ex: comportamento do cliente, anomalias em sistemas).</li>
+                    </ul>
+                    <p><strong>Exemplo de Prompt:</strong> "Analise esta planilha de vendas [cole os dados] e me diga quais são os 3 produtos com melhor desempenho e por quê." ou "Identifique os principais riscos neste relatório de projeto [cole o texto] e sugira medidas mitigadoras."</p>
+                </div>
+            </div>
+
+                        <div class="section-item">
+                <div class="section-header">
+                    <span>4. Aprovata Contrata</span>
+                    <span class="icon">▼</span>                 </div>
+                <div class="section-content">
+                    <p>Conhece alguém que tem o nosso jeito de ser e o brilho nos olhos por inovação? <b>Indica!</b> Além de fortalecer o nosso time com novos talentos, você ainda recebe um bônus pela indicação.</p>
+                    <div class="contrata-flex-container">
+                        <div class="vagas-lista">
+                            <h3>Vagas Abertas em Agosto:</h3>
+                            <ul>
+                                <li>QA Sênior</li>
+                                <li>Engenheiro de Software Android</li>
+                                <li>Engenheiro de Software Pleno</li>
+                                <li>Desenvolvedor Back End SR</li>
+                                <li>Desenvolvedor iOS SR</li>
+                                <li>Engenheiro de Dados SR</li>
+                            </ul>
+                            <p><em>(Lembre-se de adaptar a lista de vagas conforme as reais necessidades de Agosto)</em></p>
+                        </div>
+                        <div class="aprovados-imagem-container">
+                            <a href="https://www.approvata.com.br/trabalhe-conosco" target="_blank">
+                                <img src="images/profissionais-aprovados.jpg" alt="Profissionais aprovados e felizes" class="interactive-aprovados-image">
+                            </a>
+                            <p class="image-caption">Faça parte do nosso time!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-header">
                     <span>5. Boas Práticas | Cultura Aprovata: Seu Bem-Estar e Desenvolvimento (Gympass & Alura!)</span>
                     <span class="icon">▼</span>
                 </div>
@@ -285,98 +418,42 @@ div class="section-header">
                     
                     <p style="text-align: center;">Não perca essa chance! ✨</p>
                 </div>
-
-            <div class="section-item">
-                <div class="section-header">
-                    <span>2. Homenagem Especial: Feliz Dia dos Pais!</span>
-                    <span class="icon">▼</span>
-                </div>
-                <div class="section-content">
-                    <div class="content-com-imagem-esquerda">
-                        <img src="imagens/pai-filho.JPG" alt="Pai e filho brincando" class="imagem-esquerda">
-                        <div class="texto-centralizado">
-                            <p>Agosto é um mês especial, e dedicamos um carinho enorme a todos os pais da nossa equipe. No Dia dos Pais, celebramos não apenas a figura paterna, mas também o legado de carinho, dedicação e sabedoria que tantos deixam em nossas vidas.</p>
-                            <p>Ser pai é uma jornada de aprendizado contínuo, de guiar, inspirar e construir um futuro. É uma força que impulsiona e molda, e vemos essa mesma dedicação em cada um de vocês que, seja pai biológico, de coração, ou figura paterna, contribui para o crescimento de seus filhos e da nossa comunidade. Que este dia seja repleto de amor e reconhecimento!</p>
-                            <p>Nossa gratidão e um forte abraço a todos os pais da Aprovata!</p>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <div class="section-item">
-                <div class="section-header">
-                    <span>3. Dica de IA na Prática: Desvendando Dados com Inteligência!</span>
-                    <span class="icon">&#9660;</span>
-                </div>
-                <div class="section-content">
-                    
-                    <p>Continuando nossa exploração da IA, este mês focamos em como ela pode transformar sua análise de dados. Chega de passar horas em planilhas! A IA pode ser sua ferramenta para extrair insights valiosos rapidamente.</p>
-                    <ul>
-                        <li><strong>Sumarização Inteligente:</strong> Cole um relatório extenso ou dados de pesquisa e peça para a IA identificar os pontos-chave e as principais tendências.</li>
-                        <li><strong>Identificação de Padrões:</strong> Use a IA para analisar grandes conjuntos de dados e encontrar padrões que seriam difíceis de perceber manualmente (ex: comportamento do cliente, anomalias em sistemas).</li>
-                    </ul>
-                    <p><strong>Exemplo de Prompt:</strong> "Analise esta planilha de vendas [cole os dados] e me diga quais são os 3 produtos com melhor desempenho e por quê." ou "Identifique os principais riscos neste relatório de projeto [cole o texto] e sugira medidas mitigadoras."</p>
-                </div>
-            </div>
+        </div>         <footer class="footer">
+            <p>Agosto: Mês de cultivar nossos talentos e colher grandes resultados! #AprovataComVocê #TalentosQueTransformam</p>
+            <p>
+                <a href="https://www.approvata.com.br/" target="_blank">Site Aprovata</a> |
+                <a href="https://www.linkedin.com/company/approvata/" target="_blank">LinkedIn Aprovata</a>
+            </p>
+        </footer>
+    </div>     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sectionHeaders = document.querySelectorAll('.section-header');
 
-            <div class="section-item">
-                <div class="section-header">
-                    <span>4. Aprovata Contrata</span>
-                    <span class="icon">&#9660;</span>
-                </div>
-                <div class="section-content">
-                    
-                    <p>Conhece alguém que tem o nosso jeito de ser e o brilho nos olhos por inovação? <b>Indica!</b> Além de fortalecer o nosso time com novos talentos, você ainda recebe um bônus pela indicação.</p>
-                    <h3>Vagas Abertas em Agosto:</h3>
-                    <ul>
-                        <li>QA Sênior</li>
-                        <li>Engenheiro de Software Android</li>
-                        <li>Engenheiro de Software Pl</li>
-                        <li>Desenvolvedor Back End SR</li>
-                        <li>Desenvolvedor iOS SR</li>
-                        <li>Engenheiro de Dados SR</li>
-                    </ul>
-                    
-                
+            sectionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const parentItem = this.closest('.section-item');
+                    const content = parentItem.querySelector('.section-content');
 
-        <footer class="footer">
-            <p>Agosto: Mês de cultivar nossos talentos e colher grandes resultados! #AprovataComVocê #TalentosQueTransformam</p>
-            <p>
-                <a href="https://www.approvata.com.br/" target="_blank">Site Aprovata</a> |
-                <a href="https://www.linkedin.com/company/approvata/" target="_blank">LinkedIn Aprovata</a>
-            </p>
-        </footer>
-    </div>
+                    // Fecha todos os outros itens abertos (mantém apenas um aberto por vez)
+                    document.querySelectorAll('.section-item.active').forEach(item => {
+                        if (item !== parentItem) {
+                            item.classList.remove('active');
+                            item.querySelector('.section-content').style.maxHeight = '0';
+                        }
+                    });
 
-    <script>
-        document.addEventListener('DOMCo<div class="section-item">
-                
-            </div>ntentLoaded', function() {
-            const sectionHeaders = document.querySelectorAll('.section-header');
-
-            sectionHeaders.forEach(header => {
-                header.addEventListener('click', function() {
-                    const parentItem = this.closest('.section-item');
-                    const content = parentItem.querySelector('.section-content');
-
-                    // Fecha todos os outros itens abertos (mantém apenas um aberto por vez)
-                    document.querySelectorAll('.section-item.active').forEach(item => {
-                        if (item !== parentItem) {
-                            item.classList.remove('active');
-                            item.querySelector('.section-content').style.maxHeight = '0';
-                        }
-                    });
-
-                    // Alterna o estado do item clicado
-                    parentItem.classList.toggle('active');
-                    if (parentItem.classList.contains('active')) {
-                        content.style.maxHeight = content.scrollHeight + 'px'; // Ajusta a altura dinamicamente
-                    } else {
-                        content.style.maxHeight = '0';
-                    }
-                });
-            });
-        });
-    </script>
+                    // Alterna o estado do item clicado
+                    parentItem.classList.toggle('active');
+                    if (parentItem.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + 'px'; // Ajusta a altura dinamicamente
+                    } else {
+                        content.style.maxHeight = '0';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
